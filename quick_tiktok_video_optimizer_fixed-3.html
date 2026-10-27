@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="my">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10131b">
+<title>Q U I C K • TikTok Video Optimizer</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0e14;--panel:#151a24;--line:#2b3342;--text:#f4f6fb;--muted:#aab3c4;--yellow:#ffd447;--green:#8be0b0;--red:#ff9999}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0%,#20283a 0,transparent 35%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Noto Sans Myanmar",sans-serif}
+main{max-width:760px;margin:auto;padding:22px 15px 48px}.brand{font-weight:900;letter-spacing:.18em;color:var(--yellow);font-size:14px}
+h1{font-size:clamp(27px,7vw,42px);line-height:1.12;margin:10px 0}p{color:var(--muted)}.hero{padding:12px 0 18px}.tag{display:inline-block;border:1px solid #4a4427;color:var(--yellow);border-radius:999px;padding:5px 10px;font-size:12px}
+.card{background:rgba(21,26,36,.96);border:1px solid var(--line);border-radius:18px;padding:17px;margin:14px 0}
+label{display:block;font-weight:700;margin:12px 0 7px}input[type=file],select,button{width:100%;border-radius:12px;padding:13px;border:1px solid var(--line);background:#0e121a;color:var(--text);font:inherit}
+input[type=file]{font-size:14px}select{margin-bottom:5px}button{border:0;background:var(--yellow);color:#171717;font-weight:850;margin-top:12px;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.secondary{background:#252d3b;color:var(--text);border:1px solid #3b465a}
+.note{font-size:13px}.privacy{color:var(--green);font-weight:750}.status{white-space:pre-wrap;overflow-wrap:anywhere;background:#0e121a;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px;color:#d9e1ef;min-height:44px}
+progress{width:100%;height:10px;margin-top:12px;accent-color:var(--yellow)}.download{display:none;text-decoration:none;text-align:center;border-radius:12px;padding:13px;background:var(--green);color:#082416;font-weight:800;margin-top:12px}
+.small{font-size:12px;color:var(--muted)}footer{font-size:12px;color:var(--muted);padding:12px 2px}.row{display:grid;grid-template-columns:1fr;gap:4px}@media(min-width:560px){.row{grid-template-columns:1fr 1fr;gap:12px}}
+</style>
+</head>
+<body>
+<main>
+  <div class="hero">
+    <div class="brand">Q U I C K</div>
+    <div class="tag">VIDEO OPTIMIZER • BROWSER-ONLY</div>
+    <h1>Make your video<br><span style="color:var(--yellow)">TikTok-ready.</span></h1>
+    <p>MP4 / H.264 / 60 FPS အဖြစ် ပြောင်းလဲဖို့ စမ်းသပ်ဗားရှင်း။ Video ကို server ဆီ upload မလုပ်ဘဲ ဒီ browser ထဲမှာပဲ process လုပ်ပါတယ်။</p>
+  </div>
+  <section class="card">
+    <div class="privacy">🔒 Privacy first — video stays on your device</div>
+    <p class="note">ပထမအကြိမ်မှာ processing engine ကို အင်တာနက်ကနေ download လုပ်ရပါမယ်။ Website ကို HTTPS နဲ့ဖွင့်ထားဖို့ အကြံပြုပါတယ်။</p>
+    <label for="video">၁။ ဖုန်းထဲက video ရွေးပါ</label>
+    <input id="video" type="file" accept="video/*,.mp4,.mov,.m4v,.webm,.mkv">
+    <div id="fileInfo" class="small">Video မရွေးရသေးပါ။</div>
+    <div class="row">
+      <div><label for="shape">၂။ Video အရွယ်အစား</label>
+        <select id="shape"><option value="portrait">Portrait — 1080 × 1920 (TikTok)</option><option value="landscape">Landscape — 1920 × 1080 (Gameplay)</option><option value="square">Square — 1080 × 1080</option></select>
+      </div>
+      <div><label for="quality">၃။ Quality</label>
+        <select id="quality"><option value="18">High quality (ဖိုင်ပိုကြီး)</option><option value="20" selected>Balanced</option><option value="23">Smaller file</option></select>
+      </div>
+    </div>
+    <button id="process">Optimize video</button>
+    <progress id="progress" max="100" value="0" style="display:none"></progress>
+    <div id="status" class="status" role="status" aria-live="polite">Video ရွေးပြီး “Optimize video” ကိုနှိပ်ပါ။</div>
+    <a id="download" class="download" download="quick-tiktok-1080p60.mp4">⬇ Download optimized video</a>
+    <button id="reset" class="secondary" type="button">Reset</button>
+  </section>
+  <section class="card">
+    <h2 style="font-size:18px;margin-top:0">အရေးကြီးတဲ့အချက်များ</h2>
+    <p class="note">• 30 FPS ကို 60 FPS အဖြစ် ပြောင်းပေးတာက AI frame interpolation မဟုတ်ပါ။</p>
+    <p class="note">• မူရင်းမှာ မရှိတဲ့ detail ကို resolution မြှင့်ရုံနဲ့ ပြန်မဖန်တီးနိုင်ပါ။ TikTok compression ကြောင့် တင်ပြီးနောက် quality ကွာနိုင်ပါတယ်။</p>
+    <p class="note">• အရင်ဆုံး 10–20 စက္ကန့် video နဲ့ စမ်းပါ။ Processing လုပ်နေစဉ် tab မပိတ်ပါနဲ့။ ဖုန်းပူလာနိုင်ပါတယ်။</p>
+  </section>
+  <footer>Q U I C K Video Optimizer • Video stays in your browser. FFmpeg processing engine loads from a CDN. This tool does not upload to TikTok.</footer>
+</main>
+<script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const fileInput = $('video'), fileInfo = $('fileInfo'), processBtn = $('process');
+  const resetBtn = $('reset'), statusEl = $('status'), progress = $('progress'), download = $('download');
+  let ffmpeg = null, outputUrl = null, busy = false;
+  const say = s => { statusEl.textContent = s; };
+  const prettySize = n => n < 1048576 ? (n/1024).toFixed(0)+' KB' : (n/1048576).toFixed(1)+' MB';
+  function cleanupDownload() { if(outputUrl){ URL.revokeObjectURL(outputUrl); outputUrl=null; } download.removeAttribute('href'); download.style.display='none'; }
+  fileInput.addEventListener('change', () => {
+    const f = fileInput.files && fileInput.files[0]; cleanupDownload();
+    if(!f){ fileInfo.textContent='Video မရွေးရသေးပါ။'; return; }
+    fileInfo.textContent = `${f.name} • ${prettySize(f.size)}`;
+    say('Video ရွေးပြီးပါပြီ။ အရင်ဆုံး video အတိုတစ်ခုနဲ့ စမ်းကြည့်ပါ။');
+  });
+  async function loadEngine() {
+    if(ffmpeg) return;
+    if(!window.FFmpeg || !window.FFmpeg.createFFmpeg) throw new Error('FFmpeg library မတက်လာပါ။ Internet ချိတ်ပြီး Chrome မှာ website ကို refresh လုပ်ပါ။');
+    const {createFFmpeg} = window.FFmpeg;
+    ffmpeg = createFFmpeg({
+      log: false,
+      // Explicit core URL avoids depending on a guessed default path.
+      corePath: 'https://unpkg.com/@ffmpeg/core@0.11.0/dist/ffmpeg-core.js',
+      progress: ({ratio}) => { if(Number.isFinite(ratio)) progress.value=Math.max(0,Math.min(99,Math.round(ratio*100))); }
+    });
+    say('Processing engine ကို download လုပ်နေပါတယ်။ ပထမအကြိမ်မှာ အချိန်ယူနိုင်ပါတယ်…');
+    await ffmpeg.load();
+  }
+  processBtn.addEventListener('click', async () => {
+    if(busy) return;
+    const file = fileInput.files && fileInput.files[0];
+    if(!file){say('အရင်ဆုံး video file ရွေးပါ။');return;}
+    if(file.size > 300*1024*1024){say('ဖိုင်အရွယ်အစား 300 MB ကျော်နေပါတယ်။ ဖုန်း memory အတွက် ပိုတိုတဲ့ video နဲ့ စမ်းပါ။');return;}
+    busy=true; processBtn.disabled=true; resetBtn.disabled=true; fileInput.disabled=true;
+    progress.style.display='block'; progress.value=0; cleanupDownload();
+    try {
+      await loadEngine();
+      say('Video ကို ဖုန်း Browser ထဲမှာ ပြင်ဆင်နေပါတယ်။ Tab ကို မပိတ်ပါနဲ့…');
+      const extMatch=file.name.match(/\.([a-z0-9]+)$/i);
+      const inputName='input.'+(extMatch?extMatch[1].toLowerCase():'mp4'), outputName='quick-output.mp4';
+      // Clean up stale FS files from previous attempts.
+      try{ffmpeg.FS('unlink',inputName);}catch(_){}
+      try{ffmpeg.FS('unlink',outputName);}catch(_){}
+      ffmpeg.FS('writeFile',inputName,await window.FFmpeg.fetchFile(file));
+      const shape=$('shape').value; let w=1080,h=1920;
+      if(shape==='landscape'){w=1920;h=1080;} else if(shape==='square'){w=1080;h=1080;}
+      const crf=$('quality').value;
+      const filter=`scale=${w}:${h}:force_original_aspect_ratio=decrease:flags=lanczos,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1,fps=60`;
+      await ffmpeg.run('-i',inputName,'-vf',filter,'-c:v','libx264','-preset','ultrafast','-crf',crf,'-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-ar','48000','-movflags','+faststart','-y',outputName);
+      const data=ffmpeg.FS('readFile',outputName);
+      // Pass the Uint8Array itself to Blob, not its potentially oversized backing buffer.
+      const blob=new Blob([data],{type:'video/mp4'});
+      if(!blob.size) throw new Error('Output ဖိုင်အလွတ်ဖြစ်နေပါတယ်။ Video ကို ထပ်စမ်းပါ။');
+      outputUrl=URL.createObjectURL(blob); download.href=outputUrl; download.download='quick-tiktok-1080p60.mp4'; download.style.display='block';
+      progress.value=100; say(`ပြီးပါပြီ! ${w} × ${h} • 60 FPS • MP4 / H.264\nအောက်က အစိမ်းရောင် Download ခလုတ်ကိုနှိပ်ပြီး ဖုန်းထဲသိမ်းပါ။`);
+      try{ffmpeg.FS('unlink',inputName);ffmpeg.FS('unlink',outputName);}catch(_){}
+    } catch(err) {
+      console.error(err);
+      const msg=(err&&err.message)?err.message:String(err);
+      say('Processing မအောင်မြင်ပါ။\n'+msg+'\n\nလုပ်ကြည့်ရန်: Chrome သုံးပါ၊ Internet ချိတ်ပါ၊ GitHub Pages က HTTPS link နဲ့ဖွင့်ပါ။ 10–20 စက္ကန့် MP4 နဲ့ ပြန်စမ်းပါ။');
+      // Allow a fresh engine initialization if load failed.
+      if(ffmpeg && !ffmpeg.isLoaded && /fetch|network|worker|wasm|load/i.test(msg)) ffmpeg=null;
+    } finally {
+      busy=false;processBtn.disabled=false;resetBtn.disabled=false;fileInput.disabled=false;
+    }
+  });
+  resetBtn.addEventListener('click',()=>{
+    if(busy)return;
+    fileInput.value='';fileInfo.textContent='Video မရွေးရသေးပါ။';say('Video ရွေးပြီး “Optimize video” ကိုနှိပ်ပါ။');
+    progress.value=0;progress.style.display='none';cleanupDownload();
+  });
+})();
+</script>
+</body>
+</html>
